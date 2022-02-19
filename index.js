@@ -6,25 +6,27 @@ var type = [
       typeColor: "processing",
    },
    { id: 1, name: "Complete", lineColor: "--bg-green", typeColor: "complete" },
-   { id: 2, name: "Delete", lineColor: "--bg-red", typeColor: "delete" },
 ];
 
 const dateS = new Date();
 
 var listTodo = [
    {
+      id: 0,
       content: "ăn cơm nè",
-      type: 0, //0 : processing , 1 : complete , 2: delete
+      type: 0, //0 : processing , 1 : complete
       dateSubmitted: dateS,
    },
    {
+      id: 1,
       content: "ăn cơm nè",
-      type: 1, //0 : processing , 1 : complete , 2: delete
+      type: 1, //0 : processing , 1 : complete
       dateSubmitted: dateS,
    },
    {
+      id: 2,
       content: "ăn cơm nè",
-      type: 2, //0 : processing , 1 : complete , 2: delete
+      type: 1, //0 : processing , 1 : complete
       dateSubmitted: dateS,
    },
 ];
@@ -51,6 +53,7 @@ const onChangeTime = (date) => {
 const onAddTodo = (event) => {
    event.preventDefault();
    const todo = {
+      id: listTodo.length,
       content: document.getElementById("add-todo").value,
       type: 0,
       dateSubmitted: new Date(),
@@ -98,11 +101,11 @@ const renderTodoList = () => {
       todo.type === 0
          ? (document.getElementsByClassName("action")[
               index
-           ].innerHTML = `<div class="accept-complete" onClick = {onRenderComplete(${index})}>
+           ].innerHTML = `<div class="accept-complete" onClick = {onRenderComplete(${todo.id})}>
       <i class="fa-solid fa-circle-check"></i>
       <p>Complete</p>
   </div>
-  <div class="delete-task" onClick = {onRenderDelete(${index})}>
+  <div class="delete-task" onClick = {onRenderDelete(${todo.id})}>
       <i class="fa-solid fa-circle-check"></i>
       <p>Delete</p>
   </div>`)
@@ -121,8 +124,8 @@ const onRenderComplete = (index) => {
 };
 
 const onDeleteTask = (index) => {
-   console.log(index);
-   listTodo[index].type = 2;
+   listTodo.splice(index, 1);
+   console.log(listTodo);
    onCancelPopUp();
    onChangeFilter();
 };
