@@ -122,7 +122,8 @@ const onRenderComplete = (index) => {
 
 const onDeleteTask = (index) => {
    console.log(index);
-   listTodo.splice(index, 1);
+   listTodo[index].type = 2;
+   console.log(listTodo);
    onCancelPopUp();
    onChangeFilter();
 };
