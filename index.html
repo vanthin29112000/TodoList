@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+    <!-- font-google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/523d67677c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="popup__container">
+        
+    </div>
+    <div class="todo-list">
+        <div class="todo-list__container">
+            <div class="title">
+                <div class="vat"></div>
+                <p class="title__content"  >To do list</p>
+
+                <form class="add-todo__container" id="myform">
+                    <label for="add-todo" class="add-todo__title">Add todo </label>
+                    <div class="input-add">
+                        <input type ="text" class="input--text" id="add-todo">
+                        <script>
+                            document.getElementById('myform').addEventListener('submit',onAddTodo,false);
+                        </script>
+                        <i class="fa-solid fa-plus" onclick="onAddTodo()"></i>
+                    </div>
+                </form>
+            </div>
+
+            <div class="filter__container">
+                <label for="type-todo">Filter: </label>
+                <select name="filter" id="type-todo" onchange="onChangeFilter()">
+                    <option value="-1">All</option>
+                    <option value="1">Complete</option>
+                    <option value="0">Processing</option>
+                    <option value="2">Delete</option>
+                </select>
+            </div>
+
+            <div class="list-todo__container">
+                
+                
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>renderTodoList()</script>
+</body>
+</html>

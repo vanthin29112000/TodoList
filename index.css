@@ -1,0 +1,323 @@
+body,
+html {
+   width: 100vw;
+   height: 100%;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+label {
+   font-weight: 800;
+   color: #8d8d8d;
+}
+
+.input--text,
+select {
+   outline: none;
+   border: none;
+}
+
+i {
+   cursor: pointer;
+}
+
+.input-add i:hover {
+   opacity: 0.75;
+}
+
+.input-add i:active {
+   color: #4075f2;
+}
+
+.todo-list {
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient(rgb(115, 232, 245), white);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.todo-list__container {
+   width: 30%;
+   height: 90%;
+   box-shadow: 0px 0px 8px 0px rgba(10, 255, 251, 0.748);
+   border-radius: 16px;
+   background-color: #f9f9f9;
+}
+
+.title {
+   width: 100%;
+   height: 20%;
+   background-color: #4075f2;
+   border-radius: 16px 16px 0px 0px;
+   position: relative;
+}
+
+.vat {
+   width: 100%;
+   height: 16px;
+   background-color: #4075f2;
+   border-radius: 50%;
+   position: absolute;
+   bottom: -8px;
+   box-shadow: 0px 2px 4px 0px rgb(153, 151, 151);
+}
+
+.title__content {
+   font-size: 1.7em;
+   color: white;
+   font-weight: 500;
+   font-family: "Lobster", cursive;
+   text-align: center;
+   padding-top: 32px;
+}
+
+.add-todo__container {
+   width: 80%;
+   height: 72px;
+   left: 10%;
+   padding: 0px 16px;
+   bottom: -36px;
+   border-radius: 8px;
+   position: absolute;
+   z-index: 2;
+   background-color: white;
+   box-shadow: 0px 4px 4px 0px rgb(181, 181, 181);
+   display: flex;
+   flex-flow: column;
+   align-items: left;
+   justify-content: center;
+}
+
+.add-todo__title {
+   font-style: italic;
+
+   margin-bottom: 4px;
+}
+
+.input-add {
+   border: 1px solid rgb(181, 181, 181);
+   border-radius: 8px;
+   padding: 8px;
+   display: flex;
+}
+
+#add-todo {
+   flex-grow: 1;
+}
+
+.filter__container {
+   width: 80%;
+   margin: 0 auto;
+   height: fit-content;
+   margin-top: 48px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+#type-todo {
+   border: 1px solid rgb(181, 181, 181);
+   padding: 4px;
+   border-radius: 4px;
+   margin-left: 4px;
+}
+
+.list-todo__container {
+   width: 100%;
+   height: 370px;
+   margin-top: 16px;
+   overflow: auto;
+   overflow: -moz-scrollbars-none;
+   -ms-overflow-style: none;
+   padding: 8px 0px;
+}
+
+.list-todo__container::-webkit-scrollbar {
+   width: 0 !important;
+   display: none;
+}
+
+.list-todo__item {
+   width: 80%;
+   height: 29%;
+   margin: 0 auto;
+   margin-bottom: 4%;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 2px 4px 8px 0px rgb(218, 218, 218);
+   display: flex;
+}
+
+.list-todo__item-container {
+   width: 100%;
+}
+
+.line-type {
+   width: 8px;
+   height: 100%;
+   border-radius: 8px 0px 0px 8px;
+}
+
+.type-time-todo {
+   width: 100%;
+   height: fit-content;
+   flex-grow: 1;
+   display: flex;
+   padding: 8px;
+   justify-content: space-between;
+   color: #aaaaaa;
+}
+
+.time {
+   display: flex;
+   align-items: center;
+}
+
+.time p {
+   margin-left: 4px;
+}
+
+.type__container {
+   display: flex;
+   align-items: center;
+}
+
+.type {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: green;
+   margin-right: 4px;
+}
+
+.info-todo {
+   height: 36px;
+   padding: 0px 8px;
+}
+
+.action {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.accept-complete,
+.delete-task {
+   display: flex;
+   padding: 8px;
+   cursor: pointer;
+}
+
+.accept-complete:hover,
+.delete-task:hover {
+   opacity: 0.75;
+}
+
+.action i {
+   padding: 0px 4px;
+}
+
+.accept-complete {
+   color: green;
+}
+
+.delete-task {
+   color: red;
+}
+
+.--bg-green {
+   background-color: green;
+}
+
+.--bg-yellow {
+   background-color: yellow;
+}
+
+.--bg-red {
+   background-color: red;
+}
+
+.processing {
+   color: yellow;
+}
+
+.complete {
+   color: green;
+}
+
+.popup__container {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: 3;
+   background-color: rgba(128, 128, 128, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   display: none;
+}
+
+.popup {
+   background-color: white;
+   border-radius: 8px;
+   position: relative;
+   padding: 32px;
+}
+
+.popup i {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   color: #aaaaaa;
+   cursor: pointer;
+}
+
+.popup i:hover {
+   opacity: 0.75;
+}
+
+.popup i:active {
+   color: rgb(31, 31, 31);
+}
+
+.popup__content p {
+   font-size: 1.5em;
+   font-weight: 500;
+   font-family: "Times New Roman", Times, serif;
+   text-align: center;
+}
+
+.popup__action {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 16px;
+}
+
+.popup__action button {
+   padding: 8px 16px;
+   background-color: none;
+   border: none;
+
+   font-weight: 700;
+   border-radius: 4px;
+}
+
+.popup__action button:hover {
+   opacity: 0.75;
+}
+
+.btn--cancel {
+   background-color: #f3f3f3;
+   color: black;
+}
+
+.btn--accept {
+   background-color: #687cea;
+   color: white;
+}
